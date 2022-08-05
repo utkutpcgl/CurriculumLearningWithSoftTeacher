@@ -150,4 +150,5 @@ def weighted_loss(loss: dict, weight, ignore_keys=[], warmup=0):
                     loss[name] = sequence_mul(loss[name], 0.0)
     else:
         raise NotImplementedError()
+    print("<<<<<<<< LOSS 22222222 >>>>>>>:", loss,"\n\n\n")
     return loss

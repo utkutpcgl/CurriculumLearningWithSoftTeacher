@@ -259,9 +259,9 @@ custom_hooks = [
     dict(type="MeanTeacher", momentum=0.999, interval=1, warm_up=0),
 ]
 evaluation = dict(type="SubModulesDistEvalHook", interval=4000)
-optimizer = dict(type="SGD", lr=0.01, momentum=0.9, weight_decay=0.0001)
+optimizer = dict(type="SGD", lr=0.05, momentum=0.95, weight_decay=0.0001) # normally is 0.01 momentum=0.9
 lr_config = dict(step=[120000, 160000])
-runner = dict(_delete_=True, type="IterBasedRunner", max_iters=180000)
+runner = dict(_delete_=True, type="IterBasedRunner", max_iters=20000) # normally is 40  180000
 checkpoint_config = dict(by_epoch=False, interval=4000, max_keep_ckpts=20)
 
 fp16 = dict(loss_scale="dynamic")
